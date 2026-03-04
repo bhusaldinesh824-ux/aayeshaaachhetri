@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Bakes | Premium Bakery Sunwal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cart-counter">🛒 Cart: 0 items</div>
+
+    <header>
+        <div class="header-container">
+            <img src="logo .jpg.jpeg" alt="Cake Bakes Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Cake Bakes</h1>
+        <p class="tagline">Delicious cake for every occasion</p>
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="hero-video .mp4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p class="welcome-text">Welcome to cake bakes where every slice tells a story of love and sweetness.</p>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Discover Your Sweet Favourites</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <span class="badge">Top Selling</span>
+                <img src="black-forest .png.jpeg" alt="Black Forest">
+                <h3>Black Forest Cake</h3>
+                <p class="price">Rs. 1,100 per kg</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="strawberry .jpg.jpeg" alt="Strawberry">
+                <h3>Strawberry Cake</h3>
+                <p class="price">Rs. 1,000 per kg</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <span class="badge">Popular</span>
+                <img src="swiss-role .jpg.jpeg" alt="Swiss Role">
+                <h3>Swiss Role Cake</h3>
+                <p class="price">Rs. 150 per piece</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="pistachio .jpg.jpeg" alt="Pistachio">
+                <h3>Pistachio Cake</h3>
+                <p class="price">Rs. 200 per piece</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="macaron .jpg.jpeg" alt="Macaron">
+                <h3>Macaron</h3>
+                <p class="price">Rs. 150 per piece</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="croissant .jpg.jpeg" alt="Butter Croissant">
+                <h3>Butter Croissant</h3>
+                <p class="price">Rs. 250 per piece</p>
+                <div class="controls">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn plus">+</button>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>At Cake Bakes, every creation is a little spark of joy. We bake with love, imagination, and care.</p>
+            <p>Based in Sunwal, Nawalparasi, Nepal, we dedicate ourselves to making your celebrations sweeter.</p>
+            <p class="unique-ending">Baking memories that last a lifetime, one bite at a time.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <p>📍 Sunwal, Nawalparasi, Nepal</p>
+                <p>📞 9765229010</p>
+            </div>
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <a href="https://m.facebook.com/cakebakesofficial/">Facebook</a>
+                <a href="https://www.instagram.com/cakebakesofficial?igsh=MWljdm92Z2thbm1sMw==">Instagram</a>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Cake Bakes - All rights Reserved.</p>
+    </footer>
+
+    <script>
+        let total = 0;
+        const cart = document.getElementById('cart-counter');
+
+        document.querySelectorAll('.menu-card').forEach(card => {
+            const plus = card.querySelector('.plus');
+            const minus = card.querySelector('.minus');
+            const qtyLabel = card.querySelector('.qty');
+            const addBtn = card.querySelector('.add-btn');
+            let q = 1;
+
+            plus.onclick = () => { q++; qtyLabel.innerText = q; };
+            minus.onclick = () => { if(q > 1) { q--; qtyLabel.innerText = q; } };
+
+            addBtn.onclick = () => {
+                total += q;
+                cart.innerText = `🛒 Cart: ${total} items`;
+                addBtn.innerText = "Added!";
+                addBtn.style.background = "#27ae60";
+                setTimeout(() => {
+                    addBtn.innerText = "Add";
+                    addBtn.style.background = "#ff4d8d";
+                }, 800);
+            };
+        });
+    </script>
+</body>
+</html>
