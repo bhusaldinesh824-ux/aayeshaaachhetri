@@ -1,0 +1,62 @@
+:root {
+    --primary: #ff4d8d;
+    --bg-warm: #fffdf2;
+    --brown: #4a3728;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: var(--bg-warm); color: var(--brown); scroll-behavior: smooth; }
+
+/* HEADER STYLING */
+header {
+    background: white;
+    padding: 15px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { height: 60px; border-radius: 50%; }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { text-decoration: none; color: var(--brown); font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+/* FLOATING CART */
+#cart-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* HERO */
+.hero { text-align: center; padding: 60px 20px; }
+h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); }
+.video-container { max-width: 800px; margin: 30px auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.video-container video { width: 100%; display: block; }
+
+/* MENU */
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 10%; }
+.menu-card { background: white; padding: 20px; border-radius: 25px; text-align: center; transition: 0.3s; }
+.menu-card:hover { transform: translateY(-10px); }
+.menu-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; }
+
+.controls { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 15px; }
+.qty-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--primary); background: none; color: var(--primary); cursor: pointer; }
+.add-btn { background: var(--primary); color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
+
+/* ABOUT UNIQUE FONT */
+.unique-ending { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--primary); margin-top: 20px; }
+
+footer { background: #fff; padding: 40px 10%; text-align: center; margin-top: 50px; }
+.footer-grid { display: flex; justify-content: space-around; margin-bottom: 20px; }
+.social-links a { margin: 0 10px; color: var(--primary); text-decoration: none; font-weight: bold; }
